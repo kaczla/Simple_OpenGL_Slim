@@ -150,13 +150,6 @@ bool LoadImg( const char *img_path_file, GLuint &image ){
    glTexParameteri( image, GL_TEXTURE_WRAP_S, GL_REPEAT );
 	glTexParameteri( image, GL_TEXTURE_WRAP_T, GL_REPEAT );
 
-   glPixelStorei( GL_UNPACK_SWAP_BYTES, GL_FALSE );
-   glPixelStorei( GL_UNPACK_ROW_LENGTH, 0 );
-   glPixelStorei( GL_UNPACK_SKIP_PIXELS, 0 );
-   glPixelStorei( GL_UNPACK_SKIP_ROWS, 0 );
-   glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
-
-
    glTexImage2D( GL_TEXTURE_2D, 0, format, width, height, 0, format, type, ilGetData() );
    error_gl = glGetError();
    if( error_gl != GL_NO_ERROR and error_gl != GL_INVALID_ENUM ){
@@ -164,9 +157,14 @@ bool LoadImg( const char *img_path_file, GLuint &image ){
       return false;
    }
 
-   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
    glGenerateMipmap( GL_TEXTURE_2D );
+
+   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
+   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+
+   glBindTexture(GL_TEXTURE_2D, 0);
 
    ilDeleteImages( 1, &imgage_id );
    return true;
@@ -196,7 +194,10 @@ bool LoadAssimp( string file, vector <vec3> &vertices, vector <vec2> &uvs, vecto
    uvs.reserve( mesh->mNumVertices );
    for( i = 0; i < mesh->mNumVertices; ++i ){
       tmp = mesh->mTextureCoords[0][i];
-      uvs.push_back( vec2( tmp.x, tmp.y ) );
+      //important!
+      //This is done because most images have the top y-axis inversed with OpenGL's top y-axis.
+      //or conver in shader
+      uvs.push_back( glm::vec2( tmp.x, 1.0 - tmp.y ) );
    }
    //normals:
    normals.reserve( mesh->mNumVertices );
