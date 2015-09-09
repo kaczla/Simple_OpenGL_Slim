@@ -1,19 +1,67 @@
+/*!
+   \file common.cpp
+   \brief Plik odpowiedzialny za ładowanie shaderów, tekstur i plików .obj.
+*/
 #ifndef __common_hpp__
 #define __common_hpp__
 
+/*!
+   \brief Ładuje shader fragmentu i wierzchołków do pamięci.
+
+   \param vertex - ścieżka do pliku z shaderem wierzchołków
+   \param fragment - ścieżka do pliku z shaderem fragmentu
+   \return - identyfikator programu z dołączonymi shaderami
+*/
 GLuint CreateShader( string vertex, string fragment );
+
+/*!
+   \brief Ładuje teksturę obiektu do pamięci.
+
+   \param img_path_file - ścieżka do pliku z teksturą obiektu
+   \param image - identyfikator tekstury obiektu
+   \return - wartość logiczną dla ładowania tekstury, FALSE = błąd
+
+   Wykorzystuje bibliotekę DevIL.
+*/
 bool LoadImg( const char *img_path_file, GLuint &image );
+
+/*!
+   \brief Ładuje plik .obj do pamięci.
+
+   \param file - ścieżka do pliku .obj
+   \param vertices - wektor Wierzchołków
+   \param uvs - wektor UV Map
+   \param normals - wektor Normalnych
+   \param indices - wektor Indeksów Wierzchołków
+   \return - wartość logiczną dla ładowania pliku .obj, FALSE = błąd
+
+   Wykorzystuje bibliotekę assimp.
+*/
 bool LoadAssimp( string file, vector <vec3> &vertices, vector <vec2> &uvs, vector <vec3> &normals, vector <GLuint> &indices );
 
-
+/*
+   ========
+    SOURCE:
+   ========
+*/
 
 GLuint CreateShader( string vertex, string fragment ){
+   /*
+      Tworzenie shadera wierzchołków i fragmentu
+      Zmienne w których przypisane będą ww shadery
+   */
    GLuint VertexShaderID = glCreateShader( GL_VERTEX_SHADER );
    GLuint FragmentShaderID = glCreateShader( GL_FRAGMENT_SHADER );
 
+   /*
+      Zmienne dla pobierania tekstu z plików tekstowych z shaderami
+   */
    string Line;
    //vertex_shader:
    string VertexShaderCode;
+   /*
+      Otwarcie pliku tekstowego do odczytu
+   */
    ifstream VertexShaderStream( vertex.c_str() );
    if( VertexShaderStream.good() ){
       Line = "";
@@ -128,12 +176,12 @@ bool LoadImg( const char *img_path_file, GLuint &image ){
    if( ! success ){
       error = ilGetError();
       if( error != IL_NO_ERROR ){
-         cout<<"ilLoadImage: "<<iluErrorString( error )<<"\n";
+         cout<<"ilLoadImage ("<<img_path_file<<"): "<<iluErrorString( error )<<"\n";
          image = 0;
          ilDeleteImages( 1, &imgage_id );
          return false;
       }
-      cout<<"ilLoadImage: "<<ilGetError()<<"\n";
+      cout<<"ilLoadImage ("<<img_path_file<<"): "<<ilGetError()<<"\n";
       image = 0;
       ilDeleteImages( 1, &imgage_id );
       return false;
@@ -153,7 +201,7 @@ bool LoadImg( const char *img_path_file, GLuint &image ){
    glTexImage2D( GL_TEXTURE_2D, 0, format, width, height, 0, format, type, ilGetData() );
    error_gl = glGetError();
    if( error_gl != GL_NO_ERROR and error_gl != GL_INVALID_ENUM ){
-      cout<<"glTexImage2D: "<<gluErrorString( error_gl )<<"\n";
+      cout<<"glTexImage2D ("<<img_path_file<<"): "<<gluErrorString( error_gl )<<"\n";
       return false;
    }
 
@@ -178,7 +226,7 @@ bool LoadAssimp( string file, vector <vec3> &vertices, vector <vec2> &uvs, vecto
    Assimp::Importer importer;
    const aiScene* scene = importer.ReadFile( file.c_str(), 0 );
    if( !scene ){
-      cout<<"importer.ReadFile: "<<importer.GetErrorString()<<"\n";
+      cout<<"importer.ReadFile ("<<file<<"):  "<<importer.GetErrorString()<<"\n";
       return false;
    }
    const aiMesh* mesh = scene->mMeshes[0];

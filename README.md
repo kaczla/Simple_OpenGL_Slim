@@ -77,7 +77,39 @@ Uruchomić aplikację **game.app**\*\* w głównym katalogu repozytorium ( wcze�
 </br>
 </br>
 
+### Krótka dokumentacja:
+
+Znajduje się w katalogu **doxygen/html/index.html**.
+</br>
+</br>
+
+### Dodawanie kolejnych elementów 3D:
+
+Każdy obiekt musi posiadać (w folderze **data**):
+<ul>
+<li>plik .obj</li>
+<li>teksture główną</li>
+<li>teksture spektralną</li>
+</ul>
+
+Dodać ww pliki do pliku **data.init** w katalogu **data** według kolejności:
+
+> NAZWA_OBIEKTU PLIK_.OBJ PLIK_GŁÓWNEJ_TEKSTURY PLIK_SPEKTRALNEJ_TEKSTURY WSPÓŁRZEDNE_X WSPÓŁRZEDNE_Y WSPÓŁRZEDNE_Z
+
+np.
+
+> cube cube.obj cube.jpg cube_spec.jpg 2.5 0.5 -2.5
+
+</br>
+</br>
+
 ### Screenshot:
 
+</br>
+</br>
+
+### Uwagi:
+
+Część plików .obj i tekstur zostało pobranych z [tf3dm.com](http://tf3dm.com).
 </br>
 </br>

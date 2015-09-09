@@ -1,3 +1,7 @@
+/*!
+   \file header.hpp
+   \brief Plik zawierający wszystkie potrzebne biblioteki do uruchomienia aplikacji.
+*/
 #include <iostream>
 #include <cstdlib>
 #include <string>

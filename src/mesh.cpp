@@ -1,41 +1,165 @@
+/*!
+   \file mesh.cpp
+   \brief Plik odpowiedzialny zarządzanie obiektami 3D.
+*/
 #ifndef __mesh_hpp__
 #define __mesh_hpp__
 
+/*!
+   \brief klasa odpowiedzialny zarządzanie obiektami 3D.
+*/
 class Mesh{
    public:
+      /*!
+         \brief Konstruktor domyślny.
+      */
       Mesh();
+      /*!
+         \brief Destruktor.
+
+         Zwalnia pamięć zaalokowanych elementów w OpenGL.
+      */
       ~Mesh();
+      /*!
+         \brief Konstruktor kopiujący.
+      */
       Mesh( const Mesh &mesh );
+      /*!
+         \brief Operator przypisania.
+      */
       Mesh & operator=( const Mesh &mesh );
+      /*!
+         \brief Zwraca identyfikator głównej tekstury ( \link Texture \endlink ).
+      */
       GLuint ReturnTexture() const;
+      /*!
+         \brief Zwraca identyfikator spektralnej tekstury ( \link TextureSpecular \endlink ).
+      */
       GLuint ReturnTextureSpecular() const;
+      /*!
+         \brief Zwraca macierz modelu ( \link ModelMatrix \endlink ).
+      */
       mat4 ReturnModelMatrix() const;
+      /*!
+         \brief Ustala nową ścieżkę dla pliku .obj oraz głównej i spektralnej tekstury.
+
+         \param name - nowa wartość dla zmiennej \link Name \endlink
+         \param obj - nowa wartość dla zmiennej \link OBJPathFile \endlink
+         \param img - nowa wartość dla zmiennej \link ImgPathFile \endlink
+         \param spec - nowa wartość dla zmiennej \link ImgSpecPathFile \endlink
+      */
       void SetString( string name, string obj, string img, string spec );
+      /*!
+         \brief Zmiena aktualną macierz modelu ( \link ModelMatrix \endlink ).
+
+         \param matrix - nowa wartość dla zmiennej \link ModelMatrix \endlink
+      */
       void SetModelMatrix( mat4 matrix );
+      /*!
+         \brief Zmiena aktualną macierz modelu ( \link ModelMatrix \endlink ) na nową przesuniętą o wektor.
+
+         \param vector_translate - wektor przesunięcia macierzy modelu
+      */
       void SetModelMatrix( vec3 vector_translate );
+      /*!
+         \brief Wczytuje plik .obj, teksture główną i spektralną do pamięci.
+      */
       void LoadData();
+      /*!
+         \brief Tworzy VAO (Vertex Array Object).
+      */
       void BindVAO();
+      /*!
+         \brief Rysuje obiekt.
+      */
       void Draw();
+      /*!
+         \brief Translacja macierzy modelu ( \link ModelMatrix \endlink ).
+
+         \param vector_translate - wartość o jaką zostanie przesunieta macierz modelu ( \link ModelMatrix \endlink )
+      */
       void Translate( vec3 vector_translate );
+      /*!
+         \brief Rotacja macierzy modelu ( \link ModelMatrix \endlink ).
+
+         \param angle_rotate - wartość kąta w stopniach o jaki zostanie obrócona macierz modelu ( \link ModelMatrix \endlink )
+         \param vector_rotate - wartość wektora o jaki zostanie obrócona macierz modelu ( \link ModelMatrix \endlink )
+      */
       void Rotate( GLfloat angle_rotate, vec3 vector_rotate );
+      /*!
+         \brief Skalowanie macierzy modelu ( \link ModelMatrix \endlink ).
+
+         \param vector_scale - wartość o jaką zostanie przeskalowana macierz modelu ( \link ModelMatrix \endlink )
+      */
       void Scale( vec3 vector_scale );
    private:
+      /*!
+         \brief Nazwa obiektu.
+      */
       string Name;
+      /*!
+         \brief Wektor Wierzchołków.
+      */
       vector <vec3> Vertices;
+      /*!
+         \brief Wektor UV Map.
+      */
       vector <vec2> Uvs;
+      /*!
+         \brief Wektor Normalnych.
+      */
       vector <vec3> Normals;
+      /*!
+         \brief Wektor Indeksów Wierzchołków.
+      */
       vector <GLuint> Indices;
+      /*!
+         \brief Identyfikator VAO (Vertex Array Object).
+      */
       GLuint VAO;
+      /*!
+         \brief Identyfikator Wierzchołków.
+      */
       GLuint VertexBuffer;
+      /*!
+         \brief Identyfikator UV Map.
+      */
       GLuint UvBuffer;
+      /*!
+         \brief Identyfikator Normalnych.
+      */
       GLuint NormalBuffer;
+      /*!
+         \brief Identyfikator Indeksów Wierzchołków.
+      */
       GLuint IndicesBuffer;
+      /*!
+         \brief Identyfikator głównej tekstury.
+      */
       GLuint Texture;
+      /*!
+         \brief Identyfikator spektralnej tekstury.
+      */
       GLuint TextureSpecular;
+      /*!
+         \brief Ścieżka do pliku .obj.
+      */
       string OBJPathFile;
+      /*!
+         \brief Ścieżka do pliku głównej tekstury.
+      */
       string ImgPathFile;
+      /*!
+         \brief Ścieżka do pliku spektralnej tekstury.
+      */
       string ImgSpecPathFile;
+      /*!
+         \brief Macierz modelu.
+      */
       mat4 ModelMatrix;
+      /*!
+         \brief Poprawność zainicjalizowanych wszystkich elementów. FALSE = Błąd.
+      */
       bool Init = false;
 };
 

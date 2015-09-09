@@ -1,52 +1,184 @@
+/*!
+   \mainpage Główna strona:
+   Więcej informacji pod adresem: <a href="https://github.com/kaczla/Simple_OpenGL_Slim">LINK</a>
+*/
+/*!
+   \file main.cpp
+   \brief Plik główny
+
+   W plik main.cpp znajduje się \link main() \endlink oraz klasa \link Gra \endlink.
+*/
 #include "header.hpp"
 #include "common.cpp"
 #include "camera.cpp"
 #include "mesh.cpp"
 #include "light.cpp"
 
+/*!
+   \brief Główna klasa, w której gromadzone są wszystkich informacje potrzebne do uruchomienia aplikacji.
+*/
 class Gra{
    public:
+      /*!
+         \brief Inicjalizuje biblioteki, tworzy okno aplikacji, ładuje shadery oraz wszystkie obiekty.
+
+         Inicjalizuje biblioteki:\n
+         <ul>
+         <li>SDL2</li>
+         <li>GLEW</li>
+         <li>DevIL</li>
+         </ul>
+         Tworzy okno oraz kontekst dla OpenGL 3.3.\n
+         Ładuje shader wierzchołków i fragmentu oraz ustala uniformy.\n
+         Wczytuje wszystkie obiekty z plików .obj z teksturami.
+      */
       Gra();
+      /*!
+      \brief Czyści zaalokowaną pamięć.
+
+      Usuwa niepotrzebnie zaalokowaną pamięć.\n
+      Deaktywuje aktywne biblioteki.\n
+      */
       ~Gra();
+      /*!
+         \brief Urchamia aplikację.
+      */
       void Start();
    private:
-      void Shader();
+      /*!
+         \brief Rysowanie wszystkich obiektów.
+
+         Przekazanie wszystkich wartości do shaderów.\n
+         Rysowanie wszystkich obiektów.\n
+      */
       void Update();
+      /*!
+         \brief Poprawność zainicjalizowanych wszystkich elementów. FALSE = Błąd.
+      */
       bool CheckInit = true;
+      /*!
+         \brief Wskaźnik dla okna SDL2.
+      */
       SDL_Window *Okno = NULL;
-      int Wysokosc = 800;
-      int Szerokosc = 600;
+      /*!
+         \brief Wysokość okna, domyślnie 600.
+      */
+      int Wysokosc = 600;
+      /*!
+         \brief Szerokość okna, domyślnie 800.
+      */
+      int Szerokosc = 800;
+      /*!
+         \brief Wskaźnik dla kontekstu Opengl dla okna SDL2.
+      */
       SDL_GLContext Kontekst = NULL;
+      /*!
+         \brief Typ zdarzenia (SDL2).
+      */
       SDL_Event Event;
       //Shader:
+      /*!
+         \brief Ścieżka do shadera wierzchołków.
+      */
       string vertex = "./data/Shader.vert";
+      /*!
+         \brief Ścieżka do shadera fragmentu.
+      */
       string fragment = "./data/Shader.frag";
+      /*!
+         \brief identyfikator programu dla shaderów.
+      */
       GLuint ProgramID = 0;
       //Uniforms:
+      /*!
+         \brief Uniform dla macierzy modelu.
+      */
       GLuint UniformModel;
+      /*!
+         \brief Uniform dla macierzy widoku.
+      */
       GLuint UniformView;
+      /*!
+         \brief Uniform dla macierzy projekcji.
+      */
       GLuint UniformProjection;
+      /*!
+         \brief Uniform dla tekstury głównej obiektu.
+      */
       GLuint UniformTexture;
+      /*!
+         \brief Uniform dla tekstury spektralnej obiektu.
+      */
       GLuint UniformTextureSpecular;
+      /*!
+         \brief Uniform dla pozycji kamery.
+      */
       GLuint UniformViewPos;
+      /*!
+         \brief Uniform dla pozycji światła numer 1.
+      */
       GLuint UniformLightPosition_1;
+      /*!
+         \brief Uniform dla wartości Ambient światła numer 1.
+      */
       GLuint UniformLightAmbient_1;
+      /*!
+         \brief Uniform dla wartości Diffuse światła numer 1.
+      */
       GLuint UniformLightDiffuse_1;
+      /*!
+         \brief Uniform dla wartości Specular światła numer 1.
+      */
       GLuint UniformLightSpecular_1;
+      /*!
+         \brief Uniform dla pozycji światła numer 2.
+      */
       GLuint UniformLightPosition_2;
+      /*!
+         \brief Uniform dla wartości Ambient światła numer 2.
+      */
       GLuint UniformLightAmbient_2;
+      /*!
+         \brief Uniform dla wartości Diffuse światła numer 2.
+      */
       GLuint UniformLightDiffuse_2;
+      /*!
+         \brief Uniform dla wartości Specular światła numer 2.
+      */
       GLuint UniformLightSpecular_2;
       //Camera:
+      /*!
+         \brief Kamera, miejsce z którego będzie przetwarzana cała scena OpenGL.
+      */
       Camera camera;
+      /*!
+         \brief Aktualne poruszenie myszki, różnica pomiędzy poprzednią, a aktualną pozycją myszki.
+      */
       vec2 Mouse;
       //All items:
+      /*!
+         \brief Wektor wszystkich obiektów.
+      */
       vector <Mesh> Item;
+      /*!
+         \brief Iterator dla wektora wszystkich obiektów.
+      */
       vector <Mesh>::iterator It_Item;
       //Lights:
+      /*!
+         \var light1
+         \brief Światło numer 1.
+      */
+      /*!
+         \var light2
+         \brief Światło numer 2.
+      */
       Light light1, light2;
 };
 
+/*!
+   \brief Główna funkcja uruchamiająca całą aplikację.
+*/
 int main( int argc, char* argv[] ){
    Gra gra;
    gra.Start();
@@ -64,7 +196,7 @@ Gra::Gra(){
    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 3 );
    SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
    glewExperimental = true;
-   this->Okno = SDL_CreateWindow( "OpenGL", 0, 0, this->Wysokosc, this->Szerokosc, SDL_WINDOW_OPENGL );
+   this->Okno = SDL_CreateWindow( "OpenGL", 0, 0, this->Szerokosc, this->Wysokosc, SDL_WINDOW_OPENGL );
    if( this->Okno == NULL ){
       cout<<"SDL_CreateWindow: "<<SDL_GetError()<<"\n";
       this->CheckInit = false;
@@ -128,6 +260,7 @@ Gra::Gra(){
       GLfloat tmp_float;
       vec3 tmp_vector_vec3;
       while( getline( file, tmp_string ) ){
+         tmp_stream.clear();
          tmp_stream.str( tmp_string );
          Mesh tmp_item;
          //Set string
