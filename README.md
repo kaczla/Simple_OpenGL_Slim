@@ -105,6 +105,13 @@ np.
 
 ### Screenshot:
 
+![1](https://github.com/kaczla/Simple_OpenGL_Slim/screenshot/1.jpg)
+</br>
+![2](https://github.com/kaczla/Simple_OpenGL_Slim/screenshot/2.jpg)
+</br>
+![3](https://github.com/kaczla/Simple_OpenGL_Slim/screenshot/3.jpg)
+</br>
+![4](https://github.com/kaczla/Simple_OpenGL_Slim/screenshot/4.jpg)
 </br>
 </br>
 
