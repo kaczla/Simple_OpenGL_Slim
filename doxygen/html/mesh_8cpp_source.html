@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Simple OpenGL Slim: Plik źródłowy src/mesh.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simple OpenGL Slim
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.9.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mesh.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mesh_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef __mesh_hpp__</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define __mesh_hpp__</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_mesh.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh.html">Mesh</a>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a>( <span class="keyword">const</span> <a class="code" href="class_mesh.html">Mesh</a> &amp;mesh );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <a class="code" href="class_mesh.html">Mesh</a> &amp; <a class="code" href="class_mesh.html#adc9cfadff2d5fcb2f68e744859fc2ab8">operator=</a>( <span class="keyword">const</span> <a class="code" href="class_mesh.html">Mesh</a> &amp;mesh );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      GLuint <a class="code" href="class_mesh.html#a652be96cb442c84d0bb2be2ecdf7c232">ReturnTexture</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      GLuint <a class="code" href="class_mesh.html#ac1294c6fff4d8fb0b547b2d964123be4">ReturnTextureSpecular</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      mat4 <a class="code" href="class_mesh.html#aa091519f425afd36a669ac924fad4c24">ReturnModelMatrix</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a3e71c3eef9d6886d19037d556225f345">SetString</a>( <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> obj, <span class="keywordtype">string</span> img, <span class="keywordtype">string</span> spec );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a8328107b2186400b72feaec65eee9ee2">SetModelMatrix</a>( mat4 matrix );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a8328107b2186400b72feaec65eee9ee2">SetModelMatrix</a>( vec3 vector_translate );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a48dc995f2fe3720803065ad8f5cae0aa">LoadData</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a90e1061952d14c1e0873c4cc7b5a2f74">BindVAO</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#afdd95c079fd0442afef8a6c421c8bfc9">Draw</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#ab88e4dfac385d115b6a457a7415bf7c4">Translate</a>( vec3 vector_translate );</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a20bf0467e597de9848835771777fa8b5">Rotate</a>( GLfloat angle_rotate, vec3 vector_rotate );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_mesh.html#ac74b370b2bdc99f541aa2efb4dcc2cdc">Scale</a>( vec3 vector_scale );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">   99</a></span>&#160;      <span class="keywordtype">string</span> <a class="code" href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">Name</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">  103</a></span>&#160;      vector &lt;vec3&gt; <a class="code" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Vertices</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">  107</a></span>&#160;      vector &lt;vec2&gt; <a class="code" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Uvs</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">  111</a></span>&#160;      vector &lt;vec3&gt; <a class="code" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Normals</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">  115</a></span>&#160;      vector &lt;GLuint&gt; <a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">  119</a></span>&#160;      GLuint <a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">  123</a></span>&#160;      GLuint <a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">  127</a></span>&#160;      GLuint <a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">  131</a></span>&#160;      GLuint <a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">  135</a></span>&#160;      GLuint <a class="code" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">IndicesBuffer</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">  139</a></span>&#160;      GLuint <a class="code" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Texture</a>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">  143</a></span>&#160;      GLuint <a class="code" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">TextureSpecular</a>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">  147</a></span>&#160;      <span class="keywordtype">string</span> <a class="code" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">OBJPathFile</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">  151</a></span>&#160;      <span class="keywordtype">string</span> <a class="code" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">ImgPathFile</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">  155</a></span>&#160;      <span class="keywordtype">string</span> <a class="code" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">ImgSpecPathFile</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">  159</a></span>&#160;      mat4 <a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">  163</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Init</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;};</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">   ========</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">    SOURCE:</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">   ========</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">  172</a></span>&#160;<a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh::Mesh</a>(){</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">  175</a></span>&#160;<a class="code" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a>(){</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;   glDeleteTextures( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Texture</a> );</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;   glDeleteTextures( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">TextureSpecular</a> );</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;   glDeleteBuffers( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a> );</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;   glDeleteBuffers( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a> );</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;   glDeleteBuffers( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a> );</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;   glDeleteBuffers( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">IndicesBuffer</a> );</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;   glDeleteVertexArrays( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a> );</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="class_mesh.html#ad0260249329b621d4d91c66293baef8d">  185</a></span>&#160;<a class="code" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh::Mesh</a>( <span class="keyword">const</span> <a class="code" href="class_mesh.html">Mesh</a> &amp;mesh ){</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">Name</a> = mesh.<a class="code" href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">Name</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Vertices</a> = mesh.<a class="code" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Vertices</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Uvs</a> = mesh.<a class="code" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Uvs</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Normals</a> = mesh.<a class="code" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Normals</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a> = mesh.<a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a> = mesh.<a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a> = mesh.<a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a> = mesh.<a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a> = mesh.<a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">IndicesBuffer</a> = mesh.<a class="code" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">IndicesBuffer</a>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Texture</a> = mesh.<a class="code" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Texture</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">TextureSpecular</a> = mesh.<a class="code" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">TextureSpecular</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">OBJPathFile</a> = mesh.<a class="code" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">OBJPathFile</a>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">ImgPathFile</a> = mesh.<a class="code" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">ImgPathFile</a>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">ImgSpecPathFile</a> = mesh.<a class="code" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">ImgSpecPathFile</a>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a> = mesh.<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="class_mesh.html#adc9cfadff2d5fcb2f68e744859fc2ab8">  204</a></span>&#160;<a class="code" href="class_mesh.html">Mesh</a> &amp; <a class="code" href="class_mesh.html#adc9cfadff2d5fcb2f68e744859fc2ab8">Mesh::operator=</a>( <span class="keyword">const</span> <a class="code" href="class_mesh.html">Mesh</a> &amp;mesh ){</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">Name</a> = mesh.<a class="code" href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">Name</a>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Vertices</a> = mesh.<a class="code" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Vertices</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Uvs</a> = mesh.<a class="code" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Uvs</a>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Normals</a> = mesh.<a class="code" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Normals</a>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a> = mesh.<a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a> = mesh.<a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a> = mesh.<a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a> = mesh.<a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a> = mesh.<a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">IndicesBuffer</a> = mesh.<a class="code" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">IndicesBuffer</a>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Texture</a> = mesh.<a class="code" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Texture</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">TextureSpecular</a> = mesh.<a class="code" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">TextureSpecular</a>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">OBJPathFile</a> = mesh.<a class="code" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">OBJPathFile</a>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">ImgPathFile</a> = mesh.<a class="code" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">ImgPathFile</a>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">ImgSpecPathFile</a> = mesh.<a class="code" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">ImgSpecPathFile</a>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a> = mesh.<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;   <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="class_mesh.html#a652be96cb442c84d0bb2be2ecdf7c232">  224</a></span>&#160;GLuint <a class="code" href="class_mesh.html#a652be96cb442c84d0bb2be2ecdf7c232">Mesh::ReturnTexture</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;   <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Texture</a>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="class_mesh.html#ac1294c6fff4d8fb0b547b2d964123be4">  228</a></span>&#160;GLuint <a class="code" href="class_mesh.html#ac1294c6fff4d8fb0b547b2d964123be4">Mesh::ReturnTextureSpecular</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;   <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">TextureSpecular</a>;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="class_mesh.html#aa091519f425afd36a669ac924fad4c24">  232</a></span>&#160;mat4 <a class="code" href="class_mesh.html#aa091519f425afd36a669ac924fad4c24">Mesh::ReturnModelMatrix</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;   <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="class_mesh.html#a3e71c3eef9d6886d19037d556225f345">  236</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a3e71c3eef9d6886d19037d556225f345">Mesh::SetString</a>( <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> obj, <span class="keywordtype">string</span> img, <span class="keywordtype">string</span> spec ){</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">Name</a> = name;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">OBJPathFile</a> = obj;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">ImgPathFile</a> = img;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">ImgSpecPathFile</a> = spec;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="class_mesh.html#a8328107b2186400b72feaec65eee9ee2">  243</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a8328107b2186400b72feaec65eee9ee2">Mesh::SetModelMatrix</a>( mat4 matrix ){</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a> = matrix;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="class_mesh.html#af887a6e942b1599defc5a5649b4e3e1f">  247</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a8328107b2186400b72feaec65eee9ee2">Mesh::SetModelMatrix</a>( vec3 vector_translate ){</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a> = translate( mat4( 1.0f ), vector_translate );</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="class_mesh.html#a48dc995f2fe3720803065ad8f5cae0aa">  251</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a48dc995f2fe3720803065ad8f5cae0aa">Mesh::LoadData</a>(){</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;   <span class="keywordflow">if</span>( <a class="code" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">OBJPathFile</a>.empty() or <a class="code" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">ImgPathFile</a>.empty() or <a class="code" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">ImgSpecPathFile</a>.empty() ){</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      cout&lt;&lt;<span class="stringliteral">&quot;Set string!&quot;</span>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;   }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;   <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      this-&gt;<a class="code" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Init</a> = <a class="code" href="common_8cpp.html#aa019353fd8c73de91e3996f3ccddd4d8">LoadAssimp</a>( this-&gt;<a class="code" href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">OBJPathFile</a>.c_str(), this-&gt;<a class="code" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Vertices</a>, this-&gt;<a class="code" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Uvs</a>, this-&gt;<a class="code" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Normals</a>, this-&gt;<a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a> );</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <span class="keywordflow">if</span>( ! this-&gt;<a class="code" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Init</a> ){</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;         <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      this-&gt;<a class="code" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Init</a> = <a class="code" href="common_8cpp.html#aa8fb300b14aaa147a83fcbea0c7d9b1a">LoadImg</a>( this-&gt;<a class="code" href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">ImgPathFile</a>.c_str(), this-&gt;<a class="code" href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Texture</a> );</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      <span class="keywordflow">if</span>( ! this-&gt;<a class="code" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Init</a> ){</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;         <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      this-&gt;<a class="code" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Init</a> = <a class="code" href="common_8cpp.html#aa8fb300b14aaa147a83fcbea0c7d9b1a">LoadImg</a>( this-&gt;<a class="code" href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">ImgSpecPathFile</a>.c_str(), this-&gt;<a class="code" href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">TextureSpecular</a> );</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      <span class="keywordflow">if</span>( ! this-&gt;<a class="code" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Init</a> ){</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;         <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      this-&gt;<a class="code" href="class_mesh.html#a90e1061952d14c1e0873c4cc7b5a2f74">BindVAO</a>();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      cout&lt;&lt;<span class="stringliteral">&quot;Name: \&quot;&quot;</span>&lt;&lt;this-&gt;<a class="code" href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">Name</a>&lt;&lt;<span class="stringliteral">&quot;\&quot; success load.\n&quot;</span>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;   }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="line" href="class_mesh.html#a90e1061952d14c1e0873c4cc7b5a2f74">  274</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a90e1061952d14c1e0873c4cc7b5a2f74">Mesh::BindVAO</a>(){</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;   <span class="keywordflow">if</span>( this-&gt;<a class="code" href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Init</a> ){</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      glGenVertexArrays( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a> );</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      glGenBuffers( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a> );</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      glGenBuffers( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a> );</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      glGenBuffers( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a> );</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      glGenBuffers( 1, &amp;this-&gt;<a class="code" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">IndicesBuffer</a> );</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <span class="comment">//Vertex:</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      glBindBuffer( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a> );</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      glBufferData( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Vertices</a>.size() * <span class="keyword">sizeof</span>( vec3 ), &amp;this-&gt;<a class="code" href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Vertices</a>[0], GL_STATIC_DRAW );</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      <span class="comment">//Uv:</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      glBindBuffer( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a> );</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      glBufferData( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Uvs</a>.size() * <span class="keyword">sizeof</span>( vec2 ), &amp;this-&gt;<a class="code" href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Uvs</a>[0], GL_STATIC_DRAW );</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      <span class="comment">//Normal:</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      glBindBuffer( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a> );</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      glBufferData( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Normals</a>.size() * <span class="keyword">sizeof</span>( vec3 ), &amp;this-&gt;<a class="code" href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Normals</a>[0], GL_STATIC_DRAW );</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      <span class="comment">//VAO:</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      glBindVertexArray( this-&gt;<a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a> );</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      <span class="comment">//Vertex:</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      glBindBuffer( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">VertexBuffer</a> );</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0 );</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      glEnableVertexAttribArray( 0 );</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      <span class="comment">//Uv:</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      glBindBuffer( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">UvBuffer</a> );</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;      glVertexAttribPointer( 1, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0 );</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      glEnableVertexAttribArray( 1 );</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      <span class="comment">//Normal:</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      glBindBuffer( GL_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">NormalBuffer</a> );</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      glVertexAttribPointer( 2, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0 );</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      glEnableVertexAttribArray( 2 );</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      <span class="comment">//Indicies:</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">IndicesBuffer</a> );</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;      glBufferData( GL_ELEMENT_ARRAY_BUFFER, this-&gt;<a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a>.size() * <span class="keyword">sizeof</span>(GLuint), &amp;this-&gt;<a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a>[0], GL_STATIC_DRAW );</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      glBindVertexArray( 0 );</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;   }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;   <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      cout&lt;&lt;<span class="stringliteral">&quot;Load files before bind!\n&quot;</span>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;   }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="class_mesh.html#afdd95c079fd0442afef8a6c421c8bfc9">  318</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#afdd95c079fd0442afef8a6c421c8bfc9">Mesh::Draw</a>(){</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;   glBindVertexArray( this-&gt;<a class="code" href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">VAO</a> );</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;   glDrawElements( GL_TRIANGLES, this-&gt;<a class="code" href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Indices</a>.size(), GL_UNSIGNED_INT, (GLvoid *)0 );</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;}</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="class_mesh.html#ab88e4dfac385d115b6a457a7415bf7c4">  323</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#ab88e4dfac385d115b6a457a7415bf7c4">Mesh::Translate</a>( vec3 vector_translate ){</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a> = translate( this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a>, vector_translate );</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="class_mesh.html#a20bf0467e597de9848835771777fa8b5">  327</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#a20bf0467e597de9848835771777fa8b5">Mesh::Rotate</a>( GLfloat angle_rotate, vec3 vector_rotate ){</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a> = rotate( this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a>, radians( angle_rotate ), vector_rotate );</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
+<div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="class_mesh.html#ac74b370b2bdc99f541aa2efb4dcc2cdc">  331</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mesh.html#ac74b370b2bdc99f541aa2efb4dcc2cdc">Mesh::Scale</a>( vec3 vector_scale ){</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;   this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a> = scale( this-&gt;<a class="code" href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">ModelMatrix</a>, vector_scale );</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_mesh_html_ae293e39cb11bde8d46fe77ef622893bd"><div class="ttname"><a href="class_mesh.html#ae293e39cb11bde8d46fe77ef622893bd">Mesh::Indices</a></div><div class="ttdeci">vector&lt; GLuint &gt; Indices</div><div class="ttdoc">Wektor Indeksów Wierzchołków. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00115">mesh.cpp:115</a></div></div>
+<div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdoc">klasa odpowiedzialny zarządzanie obiektami 3D. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00011">mesh.cpp:11</a></div></div>
+<div class="ttc" id="class_mesh_html_aebc3b6a09b29bddc8df3e18de713a537"><div class="ttname"><a href="class_mesh.html#aebc3b6a09b29bddc8df3e18de713a537">Mesh::Normals</a></div><div class="ttdeci">vector&lt; vec3 &gt; Normals</div><div class="ttdoc">Wektor Normalnych. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00111">mesh.cpp:111</a></div></div>
+<div class="ttc" id="class_mesh_html_a19c2e56d9176d8c22ca005ad60b7e168"><div class="ttname"><a href="class_mesh.html#a19c2e56d9176d8c22ca005ad60b7e168">Mesh::OBJPathFile</a></div><div class="ttdeci">string OBJPathFile</div><div class="ttdoc">Ścieżka do pliku .obj. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00147">mesh.cpp:147</a></div></div>
+<div class="ttc" id="class_mesh_html_a73723f393406b8372a44c3b1bdbef20e"><div class="ttname"><a href="class_mesh.html#a73723f393406b8372a44c3b1bdbef20e">Mesh::Vertices</a></div><div class="ttdeci">vector&lt; vec3 &gt; Vertices</div><div class="ttdoc">Wektor Wierzchołków. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00103">mesh.cpp:103</a></div></div>
+<div class="ttc" id="class_mesh_html_abfa5cb45fdb06445677dfbe95d3d934c"><div class="ttname"><a href="class_mesh.html#abfa5cb45fdb06445677dfbe95d3d934c">Mesh::TextureSpecular</a></div><div class="ttdeci">GLuint TextureSpecular</div><div class="ttdoc">Identyfikator spektralnej tekstury. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00143">mesh.cpp:143</a></div></div>
+<div class="ttc" id="common_8cpp_html_aa8fb300b14aaa147a83fcbea0c7d9b1a"><div class="ttname"><a href="common_8cpp.html#aa8fb300b14aaa147a83fcbea0c7d9b1a">LoadImg</a></div><div class="ttdeci">bool LoadImg(const char *img_path_file, GLuint &amp;image)</div><div class="ttdoc">Ładuje teksturę obiektu do pamięci. </div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00167">common.cpp:167</a></div></div>
+<div class="ttc" id="class_mesh_html_ab88e4dfac385d115b6a457a7415bf7c4"><div class="ttname"><a href="class_mesh.html#ab88e4dfac385d115b6a457a7415bf7c4">Mesh::Translate</a></div><div class="ttdeci">void Translate(vec3 vector_translate)</div><div class="ttdoc">Translacja macierzy modelu ( ModelMatrix ). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00323">mesh.cpp:323</a></div></div>
+<div class="ttc" id="class_mesh_html_a20bf0467e597de9848835771777fa8b5"><div class="ttname"><a href="class_mesh.html#a20bf0467e597de9848835771777fa8b5">Mesh::Rotate</a></div><div class="ttdeci">void Rotate(GLfloat angle_rotate, vec3 vector_rotate)</div><div class="ttdoc">Rotacja macierzy modelu ( ModelMatrix ). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00327">mesh.cpp:327</a></div></div>
+<div class="ttc" id="class_mesh_html_af06e96c86a77c43add6bd84839247dfc"><div class="ttname"><a href="class_mesh.html#af06e96c86a77c43add6bd84839247dfc">Mesh::UvBuffer</a></div><div class="ttdeci">GLuint UvBuffer</div><div class="ttdoc">Identyfikator UV Map. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00127">mesh.cpp:127</a></div></div>
+<div class="ttc" id="class_mesh_html_a2af137f1571af89172b9c102302c416b"><div class="ttname"><a href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh::Mesh</a></div><div class="ttdeci">Mesh()</div><div class="ttdoc">Konstruktor domyślny. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00172">mesh.cpp:172</a></div></div>
+<div class="ttc" id="class_mesh_html_a6b4b5fba2782f8960653fae8b9bdc33d"><div class="ttname"><a href="class_mesh.html#a6b4b5fba2782f8960653fae8b9bdc33d">Mesh::ImgPathFile</a></div><div class="ttdeci">string ImgPathFile</div><div class="ttdoc">Ścieżka do pliku głównej tekstury. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00151">mesh.cpp:151</a></div></div>
+<div class="ttc" id="class_mesh_html_ab99c8c32516d4db348c2e614994b4e89"><div class="ttname"><a href="class_mesh.html#ab99c8c32516d4db348c2e614994b4e89">Mesh::ModelMatrix</a></div><div class="ttdeci">mat4 ModelMatrix</div><div class="ttdoc">Macierz modelu. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00159">mesh.cpp:159</a></div></div>
+<div class="ttc" id="class_mesh_html_a3e71c3eef9d6886d19037d556225f345"><div class="ttname"><a href="class_mesh.html#a3e71c3eef9d6886d19037d556225f345">Mesh::SetString</a></div><div class="ttdeci">void SetString(string name, string obj, string img, string spec)</div><div class="ttdoc">Ustala nową ścieżkę dla pliku .obj oraz głównej i spektralnej tekstury. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00236">mesh.cpp:236</a></div></div>
+<div class="ttc" id="class_mesh_html_a8328107b2186400b72feaec65eee9ee2"><div class="ttname"><a href="class_mesh.html#a8328107b2186400b72feaec65eee9ee2">Mesh::SetModelMatrix</a></div><div class="ttdeci">void SetModelMatrix(mat4 matrix)</div><div class="ttdoc">Zmiena aktualną macierz modelu ( ModelMatrix ). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00243">mesh.cpp:243</a></div></div>
+<div class="ttc" id="class_mesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destruktor. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00175">mesh.cpp:175</a></div></div>
+<div class="ttc" id="class_mesh_html_a22ebd3fe5608396f6febe8637389f9e1"><div class="ttname"><a href="class_mesh.html#a22ebd3fe5608396f6febe8637389f9e1">Mesh::IndicesBuffer</a></div><div class="ttdeci">GLuint IndicesBuffer</div><div class="ttdoc">Identyfikator Indeksów Wierzchołków. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00135">mesh.cpp:135</a></div></div>
+<div class="ttc" id="class_mesh_html_ad96e7a541cc16af69c513147260ed4f0"><div class="ttname"><a href="class_mesh.html#ad96e7a541cc16af69c513147260ed4f0">Mesh::Texture</a></div><div class="ttdeci">GLuint Texture</div><div class="ttdoc">Identyfikator głównej tekstury. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00139">mesh.cpp:139</a></div></div>
+<div class="ttc" id="class_mesh_html_a9cf154b14a7c28e6ebb944838569ab0c"><div class="ttname"><a href="class_mesh.html#a9cf154b14a7c28e6ebb944838569ab0c">Mesh::NormalBuffer</a></div><div class="ttdeci">GLuint NormalBuffer</div><div class="ttdoc">Identyfikator Normalnych. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00131">mesh.cpp:131</a></div></div>
+<div class="ttc" id="class_mesh_html_adc9cfadff2d5fcb2f68e744859fc2ab8"><div class="ttname"><a href="class_mesh.html#adc9cfadff2d5fcb2f68e744859fc2ab8">Mesh::operator=</a></div><div class="ttdeci">Mesh &amp; operator=(const Mesh &amp;mesh)</div><div class="ttdoc">Operator przypisania. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00204">mesh.cpp:204</a></div></div>
+<div class="ttc" id="common_8cpp_html_aa019353fd8c73de91e3996f3ccddd4d8"><div class="ttname"><a href="common_8cpp.html#aa019353fd8c73de91e3996f3ccddd4d8">LoadAssimp</a></div><div class="ttdeci">bool LoadAssimp(string file, vector&lt; vec3 &gt; &amp;vertices, vector&lt; vec2 &gt; &amp;uvs, vector&lt; vec3 &gt; &amp;normals, vector&lt; GLuint &gt; &amp;indices)</div><div class="ttdoc">Ładuje plik .obj do pamięci. </div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00221">common.cpp:221</a></div></div>
+<div class="ttc" id="class_mesh_html_ac74b370b2bdc99f541aa2efb4dcc2cdc"><div class="ttname"><a href="class_mesh.html#ac74b370b2bdc99f541aa2efb4dcc2cdc">Mesh::Scale</a></div><div class="ttdeci">void Scale(vec3 vector_scale)</div><div class="ttdoc">Skalowanie macierzy modelu ( ModelMatrix ). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00331">mesh.cpp:331</a></div></div>
+<div class="ttc" id="class_mesh_html_afdd95c079fd0442afef8a6c421c8bfc9"><div class="ttname"><a href="class_mesh.html#afdd95c079fd0442afef8a6c421c8bfc9">Mesh::Draw</a></div><div class="ttdeci">void Draw()</div><div class="ttdoc">Rysuje obiekt. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00318">mesh.cpp:318</a></div></div>
+<div class="ttc" id="class_mesh_html_ac1294c6fff4d8fb0b547b2d964123be4"><div class="ttname"><a href="class_mesh.html#ac1294c6fff4d8fb0b547b2d964123be4">Mesh::ReturnTextureSpecular</a></div><div class="ttdeci">GLuint ReturnTextureSpecular() const </div><div class="ttdoc">Zwraca identyfikator spektralnej tekstury ( TextureSpecular ). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00228">mesh.cpp:228</a></div></div>
+<div class="ttc" id="class_mesh_html_a48dc995f2fe3720803065ad8f5cae0aa"><div class="ttname"><a href="class_mesh.html#a48dc995f2fe3720803065ad8f5cae0aa">Mesh::LoadData</a></div><div class="ttdeci">void LoadData()</div><div class="ttdoc">Wczytuje plik .obj, teksture główną i spektralną do pamięci. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00251">mesh.cpp:251</a></div></div>
+<div class="ttc" id="class_mesh_html_a7a648b0705c729fb997cbf4a64c0d250"><div class="ttname"><a href="class_mesh.html#a7a648b0705c729fb997cbf4a64c0d250">Mesh::ImgSpecPathFile</a></div><div class="ttdeci">string ImgSpecPathFile</div><div class="ttdoc">Ścieżka do pliku spektralnej tekstury. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00155">mesh.cpp:155</a></div></div>
+<div class="ttc" id="class_mesh_html_a652be96cb442c84d0bb2be2ecdf7c232"><div class="ttname"><a href="class_mesh.html#a652be96cb442c84d0bb2be2ecdf7c232">Mesh::ReturnTexture</a></div><div class="ttdeci">GLuint ReturnTexture() const </div><div class="ttdoc">Zwraca identyfikator głównej tekstury ( Texture ). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00224">mesh.cpp:224</a></div></div>
+<div class="ttc" id="class_mesh_html_a6e7757fa12d76a6179f2fe7f99277c4e"><div class="ttname"><a href="class_mesh.html#a6e7757fa12d76a6179f2fe7f99277c4e">Mesh::Init</a></div><div class="ttdeci">bool Init</div><div class="ttdoc">Poprawność zainicjalizowanych wszystkich elementów. FALSE = Błąd. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00163">mesh.cpp:163</a></div></div>
+<div class="ttc" id="class_mesh_html_a09b989b9d4df8ae595d7e80e091a4a5b"><div class="ttname"><a href="class_mesh.html#a09b989b9d4df8ae595d7e80e091a4a5b">Mesh::VAO</a></div><div class="ttdeci">GLuint VAO</div><div class="ttdoc">Identyfikator VAO (Vertex Array Object). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00119">mesh.cpp:119</a></div></div>
+<div class="ttc" id="class_mesh_html_a90e1061952d14c1e0873c4cc7b5a2f74"><div class="ttname"><a href="class_mesh.html#a90e1061952d14c1e0873c4cc7b5a2f74">Mesh::BindVAO</a></div><div class="ttdeci">void BindVAO()</div><div class="ttdoc">Tworzy VAO (Vertex Array Object). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00274">mesh.cpp:274</a></div></div>
+<div class="ttc" id="class_mesh_html_a4904038a670e48fe34b3fee5822f7b5a"><div class="ttname"><a href="class_mesh.html#a4904038a670e48fe34b3fee5822f7b5a">Mesh::Name</a></div><div class="ttdeci">string Name</div><div class="ttdoc">Nazwa obiektu. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00099">mesh.cpp:99</a></div></div>
+<div class="ttc" id="class_mesh_html_a795c33259c514584fd8e82dbd38c8237"><div class="ttname"><a href="class_mesh.html#a795c33259c514584fd8e82dbd38c8237">Mesh::VertexBuffer</a></div><div class="ttdeci">GLuint VertexBuffer</div><div class="ttdoc">Identyfikator Wierzchołków. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00123">mesh.cpp:123</a></div></div>
+<div class="ttc" id="class_mesh_html_a4d369a0c169ba2bbae67ba344e09d976"><div class="ttname"><a href="class_mesh.html#a4d369a0c169ba2bbae67ba344e09d976">Mesh::Uvs</a></div><div class="ttdeci">vector&lt; vec2 &gt; Uvs</div><div class="ttdoc">Wektor UV Map. </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00107">mesh.cpp:107</a></div></div>
+<div class="ttc" id="class_mesh_html_aa091519f425afd36a669ac924fad4c24"><div class="ttname"><a href="class_mesh.html#aa091519f425afd36a669ac924fad4c24">Mesh::ReturnModelMatrix</a></div><div class="ttdeci">mat4 ReturnModelMatrix() const </div><div class="ttdoc">Zwraca macierz modelu ( ModelMatrix ). </div><div class="ttdef"><b>Definition:</b> <a href="mesh_8cpp_source.html#l00232">mesh.cpp:232</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<html>
+   <body>
+   </body>
+</html>

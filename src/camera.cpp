@@ -150,6 +150,12 @@ class Camera{
       vec3 MovementDirection;
 };
 
+/*
+   ========
+    SOURCE:
+   ========
+*/
+
 Camera::Camera(){
    this->ProjectionMatrix = perspective( radians( this->VOF.x ), this->Aspect.x, this->Near.x, this->Far.x );
    this->ViewMatrix = lookAt( this->Position, this->Position + this->ViewDirection, this->Up );

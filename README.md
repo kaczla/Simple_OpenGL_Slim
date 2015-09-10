@@ -79,7 +79,7 @@ Uruchomić aplikację **game.app**\*\* w głównym katalogu repozytorium ( wcze�
 
 ### Krótka dokumentacja:
 
-Znajduje się w katalogu **doxygen/html/index.html**.
+Znajduje się w katalogu **doxygen/html/****[index.html](doxygen/html/index.html)**
 </br>
 </br>
 
@@ -105,13 +105,13 @@ np.
 
 ### Screenshot:
 
-![1](https://github.com/kaczla/Simple_OpenGL_Slim/screenshot/1.jpg)
+![screenshot_1](screenshot/1.jpg "screenshot_1")
 </br>
-![2](https://github.com/kaczla/Simple_OpenGL_Slim/screenshot/2.jpg)
+![screenshot_2](screenshot/2.jpg "screenshot_2")
 </br>
-![3](https://github.com/kaczla/Simple_OpenGL_Slim/screenshot/3.jpg)
+![screenshot_3](screenshot/3.jpg "screenshot_3")
 </br>
-![4](https://github.com/kaczla/Simple_OpenGL_Slim/screenshot/4.jpg)
+![screenshot_4](screenshot/4.jpg "screenshot_4")
 </br>
 </br>
 

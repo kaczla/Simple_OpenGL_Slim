@@ -2,7 +2,7 @@
 *.slo
 *.lo
 *.o
-*.obj
+#*.obj
 
 # Precompiled Headers
 *.gch
@@ -26,3 +26,7 @@
 *.exe
 *.out
 *.app
+
+# User:
+*~
+*.db

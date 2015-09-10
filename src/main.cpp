@@ -176,6 +176,12 @@ class Gra{
       Light light1, light2;
 };
 
+/*
+   ========
+    SOURCE:
+   ========
+*/
+
 /*!
    \brief Główna funkcja uruchamiająca całą aplikację.
 */

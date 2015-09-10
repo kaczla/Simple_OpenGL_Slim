@@ -85,6 +85,12 @@ class Light{
       vec3 Specular = vec3( 0.5f );
 };
 
+/*
+   ========
+    SOURCE:
+   ========
+*/
+
 Light::Light(){
 }
 
