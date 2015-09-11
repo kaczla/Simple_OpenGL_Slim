@@ -273,41 +273,98 @@ void Mesh::LoadData(){
 
 void Mesh::BindVAO(){
    if( this->Init ){
+      /*
+         Stworzenie identyfikator dla AVO
+      */
       glGenVertexArrays( 1, &this->VAO );
+      /*
+         Stworzenie identyfikator dla wierzchołków
+      */
       glGenBuffers( 1, &this->VertexBuffer );
+      /*
+         Stworzenie identyfikator dla UV Map
+      */
       glGenBuffers( 1, &this->UvBuffer );
+      /*
+         Stworzenie identyfikator dla Normalnych
+      */
       glGenBuffers( 1, &this->NormalBuffer );
+      /*
+         Stworzenie identyfikator dla kolejności trójkątów
+      */
       glGenBuffers( 1, &this->IndicesBuffer );
 
       //Vertex:
+      /*
+         Przygotowanie buffora.
+      */
       glBindBuffer( GL_ARRAY_BUFFER, this->VertexBuffer );
+      /*
+         Wypełnienie bufora danymi z wierzchołków.
+      */
       glBufferData( GL_ARRAY_BUFFER, this->Vertices.size() * sizeof( vec3 ), &this->Vertices[0], GL_STATIC_DRAW );
+
       //Uv:
+      /*
+         Przygotowanie buffora.
+      */
       glBindBuffer( GL_ARRAY_BUFFER, this->UvBuffer );
+      /*
+         Wypełnienie bufora danymi z uv mapami.
+      */
       glBufferData( GL_ARRAY_BUFFER, this->Uvs.size() * sizeof( vec2 ), &this->Uvs[0], GL_STATIC_DRAW );
+
       //Normal:
+      /*
+         Przygotowanie buffora.
+      */
       glBindBuffer( GL_ARRAY_BUFFER, this->NormalBuffer );
+      /*
+         Wypełnienie bufora danymi z normalnymi.
+      */
       glBufferData( GL_ARRAY_BUFFER, this->Normals.size() * sizeof( vec3 ), &this->Normals[0], GL_STATIC_DRAW );
 
       //VAO:
+      /*
+         Przygotowanie VAO
+      */
       glBindVertexArray( this->VAO );
 
       //Vertex:
+      /*
+         Przypinanie do VAO.
+      */
       glBindBuffer( GL_ARRAY_BUFFER, this->VertexBuffer );
       glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0 );
+      /*
+         Identyfikator wejścia 0
+      */
       glEnableVertexAttribArray( 0 );
       //Uv:
       glBindBuffer( GL_ARRAY_BUFFER, this->UvBuffer );
       glVertexAttribPointer( 1, 2, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0 );
+      /*
+         Identyfikator wejścia 1
+      */
       glEnableVertexAttribArray( 1 );
       //Normal:
       glBindBuffer( GL_ARRAY_BUFFER, this->NormalBuffer );
       glVertexAttribPointer( 2, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0 );
+      /*
+         Identyfikator wejścia 2
+      */
       glEnableVertexAttribArray( 2 );
+
       //Indicies:
+      /*
+         Przypięcie do VAO danych o kolejności rysowania trójkątów.
+      */
       glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, this->IndicesBuffer );
       glBufferData( GL_ELEMENT_ARRAY_BUFFER, this->Indices.size() * sizeof(GLuint), &this->Indices[0], GL_STATIC_DRAW );
 
+      /*
+         Odpięcie VAO.
+      */
       glBindVertexArray( 0 );
    }
    else{
@@ -316,7 +373,13 @@ void Mesh::BindVAO(){
 }
 
 void Mesh::Draw(){
+   /*
+      Przypięcie VAO do rysowania.
+   */
    glBindVertexArray( this->VAO );
+   /*
+      Rysowanie.
+   */
    glDrawElements( GL_TRIANGLES, this->Indices.size(), GL_UNSIGNED_INT, (GLvoid *)0 );
 }
 

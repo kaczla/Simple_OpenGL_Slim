@@ -157,7 +157,13 @@ class Camera{
 */
 
 Camera::Camera(){
+   /*
+      Otrzymanie macierzy projekcji
+   */
    this->ProjectionMatrix = perspective( radians( this->VOF.x ), this->Aspect.x, this->Near.x, this->Far.x );
+   /*
+      Otrzymanie macierzy widoku
+   */
    this->ViewMatrix = lookAt( this->Position, this->Position + this->ViewDirection, this->Up );
 }
 
@@ -194,11 +200,17 @@ Camera & Camera::operator=( const Camera &camera ){
 }
 
 mat4 Camera::ReturnProjectionMatrix(){
+   /*
+      Otrzymanie macierzy projekcji
+   */
    this->ProjectionMatrix = perspective( radians( this->VOF.x ), this->Aspect.x, this->Near.x, this->Far.x );
    return this->ProjectionMatrix;
 }
 
 mat4 Camera::ReturnViewMatrix(){
+   /*
+      Otrzymanie macierzy widoku
+   */
    this->ViewMatrix = lookAt( this->Position, this->Position + this->ViewDirection, this->Up );
    return this->ViewMatrix;
 }
