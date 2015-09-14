@@ -73,6 +73,10 @@ class Gra{
       */
       SDL_GLContext Kontekst = NULL;
       /*!
+         \brief Skupienie się na oknie, czy myszka jest w okno. FALSE = okno jest nie aktywne.
+      */
+      bool Focus = true;
+      /*!
          \brief Typ zdarzenia (SDL2).
       */
       SDL_Event Event;
@@ -554,6 +558,20 @@ void Gra::Start(){
                      break;
                }
                break;
+            case SDL_WINDOWEVENT:
+               switch( this->Event.window.event ){
+                  case SDL_WINDOWEVENT_FOCUS_GAINED:
+                     SDL_SetRelativeMouseMode( SDL_TRUE );
+                     this->Focus = true;
+                     break;
+                  case SDL_WINDOWEVENT_FOCUS_LOST:
+                     SDL_SetRelativeMouseMode( SDL_FALSE );
+                     this->Focus = false;
+                     break;
+                  default:
+                     break;
+               }
+               break;
             default:
                break;
          }
@@ -567,6 +585,7 @@ void Gra::Start(){
 }
 
 void Gra::Update(){
+   if( this->Focus ){
    /*
       Wyczyszczenie ekranu.
    */
@@ -646,4 +665,5 @@ void Gra::Update(){
       Odświeżenie okna.
    */
    SDL_GL_SwapWindow( this->Okno );
+   }
 }
