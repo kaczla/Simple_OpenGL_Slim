@@ -6,6 +6,8 @@ Projekt przedstawia przykładowe wykorzystanie grafiki 3D w OpenGL.</br>
 Stworzony dla zajęć **Grafika komputerowa i wizualizacja** w 2015 roku.</br>
 Wersja pierwsza, większa znajduje się pod linkiem: [LINK](https://github.com/kaczla/Simple_OpenGL_Game)
 </br>
+Możesz zobaczyć również: [LINK](https://github.com/kaczla/OpenGL)
+</br>
 </br>
 Proste wczytywanie i rysowanie pojedyńczych obiektów 3D.
 </br>
@@ -27,6 +29,9 @@ x64
 [MinGW + MSYS](http://www.mingw.org/)
 </br>
 g++ (GCC) 4.8.1
+</br>
+</br>
+Testowano na kartach graficznych: NVIDIA GeForce 710M, Intel HD Graphics 4000.
 </br>
 </br>
 
